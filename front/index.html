@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDG Community</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Background Blur -->
+  <div class="background-blur">
+    <span class="blur-circle blue"></span>
+    <span class="blur-circle red"></span>
+    <span class="blur-circle yellow"></span>
+    <span class="blur-circle green"></span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="gdg-logo.png" alt="GDG Logo">
+      <span class="logo-text">GDG Campus</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><button id="loginBtn">Login</button></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="hero-text">
+        <h1>Empowering <span class="highlight">Developers</span></h1>
+        <p>Join the GDG community and build the future with technology.</p>
+        <a href="#events" class="cta">Explore Events</a>
+      </div>
+
+      <div class="hero-image">
+        <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- Main Window -->
+          <rect x="80" y="100" width="440" height="300" rx="18" fill="#1e293b" />
+
+          <!-- Top Dots -->
+          <circle cx="130" cy="115" r="6" fill="#EA4335" />
+          <circle cx="150" cy="115" r="6" fill="#FBBC05" />
+          <circle cx="170" cy="115" r="6" fill="#34A853" />
+
+          <!-- Animated Code Lines -->
+          <text x="150" y="190" fill="#34A853" font-size="24" font-family="monospace">
+            <tspan id="codeLine1"></tspan>
+          </text>
+
+          <text x="150" y="230" fill="#4285F4" font-size="24" font-family="monospace">
+            <tspan id="codeLine2"></tspan>
+          </text>
+
+          <text x="150" y="270" fill="#EA4335" font-size="24" font-family="monospace">
+            <tspan id="codeLine3"></tspan>
+          </text>
+
+          <text x="150" y="310" fill="#ffffff" font-size="24" font-family="monospace">
+            <tspan id="cursor">|</tspan>
+          </text>
+
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+<section id="about" class="section reveal">
+  <h2>About GDG</h2>
+
+  <p class="about-main">
+    Google Developer Groups (GDG) are communities powered by Google for developers 
+    who are passionate about learning, building, and growing together.
+  </p>
+
+  <div class="about-features">
+
+    <div class="about-card">
+      <h3>🚀 Hands-On Learning</h3>
+      <p>Workshops, bootcamps, and real-world coding sessions designed to build practical skills.</p>
+    </div>
+
+    <div class="about-card">
+      <h3>🤝 Community</h3>
+      <p>Connect with developers, designers, and innovators who share the same passion for technology.</p>
+    </div>
+
+    <div class="about-card">
+      <h3>🌍 Opportunities</h3>
+      <p>Hackathons, networking events, and career growth opportunities in the tech ecosystem.</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- EVENTS -->
+  <section id="events" class="section reveal">
+    <h2>Upcoming Events</h2>
+
+    <div class="event-container">
+
+      <!-- AI Bootcamp -->
+      <div class="card reveal">
+        <h3>AI Bootcamp</h3>
+        <p>Hands-on AI & ML workshop.</p>
+        <p class="count">Registered: <span id="aiCount">0</span></p>
+        <button onclick="registerEvent('AI Bootcamp')">Register</button>
+      </div>
+
+      <!-- Web Dev Workshop -->
+      <div class="card reveal">
+        <h3>Web Dev Workshop</h3>
+        <p>Learn modern frontend development.</p>
+        <p class="count">Registered: <span id="webCount">0</span></p>
+        <button onclick="registerEvent('Web Dev Workshop')">Register</button>
+      </div>
+
+      <!-- Hackathon -->
+      <div class="card reveal">
+        <h3>Hackathon</h3>
+        <p>24-hour coding challenge.</p>
+        <p class="count">Registered: <span id="hackCount">0</span></p>
+        <button onclick="registerEvent('Hackathon')">Register</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+    </div>
+  </div>
+
+  <!-- Registration Modal -->
+  <div class="register-modal" id="registerModal">
+    <div class="register-content">
+      <span class="close-register" onclick="closeRegisterModal()">&times;</span>
+      <h2 id="eventTitle">Register</h2>
+
+      <form id="registerForm">
+        <input type="text" id="nameInput" placeholder="Your Name" required />
+        <input type="email" id="emailInput" placeholder="Your Email" required />
+        <button type="submit" id="submitBtn">Register Now</button>
+        <p id="formMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 GDG Community
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
