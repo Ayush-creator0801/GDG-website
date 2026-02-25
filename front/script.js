@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("emailInput").value;
 
     try {
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch("https://gdg-website-73eo.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json();
 
-      formMessage.style.color = "lightgreen";
+      formMessage.style.color = "lightgreen"; 
       formMessage.innerText = data.message;
 
       registerForm.reset();
